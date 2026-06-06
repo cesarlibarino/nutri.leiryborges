@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Leiry Borges | Nutrição e Emagrecimento</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --green:#557a67;
+      --green-dark:#2f4e3d;
+      --green-soft:#edf6f1;
+      --blue:#8cb7c9;
+      --blue-soft:#eef8fb;
+      --beige:#f7efe5;
+      --cream:#fffaf4;
+      --white:#ffffff;
+      --text:#252322;
+      --muted:#6d6864;
+      --line:rgba(47,78,61,.13);
+      --shadow:0 28px 70px rgba(47,78,61,.13);
+      --serif:'Fraunces', serif;
+      --sans:'Inter', sans-serif;
+      --transition:all .35s cubic-bezier(.25,1,.5,1);
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:var(--sans);
+      background:var(--cream);
+      color:var(--text);
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:100%;
+      max-width:1160px;
+      margin:0 auto;
+      padding:0 24px;
+    }
+
+    section{
+      position:relative;
+      padding:88px 0;
+      overflow:hidden;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      background:var(--green-dark);
+      color:var(--white);
+      border:1px solid var(--green-dark);
+      padding:18px 30px;
+      border-radius:999px;
+      text-transform:uppercase;
+      letter-spacing:1.1px;
+      font-size:13px;
+      font-weight:900;
+      transition:var(--transition);
+      box-shadow:0 18px 42px rgba(47,78,61,.22);
+    }
+
+    .btn:hover{
+      transform:translateY(-4px);
+      background:var(--green);
+      border-color:var(--green);
+      box-shadow:0 24px 52px rgba(47,78,61,.28);
+    }
+
+    .btn-secondary{
+      background:var(--white);
+      color:var(--green-dark);
+      border-color:rgba(47,78,61,.14);
+      box-shadow:none;
+    }
+
+    .btn-secondary:hover{
+      background:var(--green-soft);
+      color:var(--green-dark);
+      box-shadow:none;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:var(--green-dark);
+      background:var(--green-soft);
+      border:1px solid rgba(47,78,61,.15);
+      padding:11px 16px;
+      border-radius:999px;
+      text-transform:uppercase;
+      letter-spacing:2.4px;
+      font-size:10px;
+      font-weight:900;
+    }
+
+    .tag::before{
+      content:"";
+      width:7px;
+      height:7px;
+      background:var(--green);
+      border-radius:999px;
+    }
+
+    .title{
+      font-family:var(--serif);
+      color:var(--green-dark);
+      font-size:56px;
+      line-height:1.02;
+      letter-spacing:-1.4px;
+      font-weight:800;
+    }
+
+    .title span{
+      color:var(--green);
+    }
+
+    .subtitle{
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.7;
+      max-width:660px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.78);
+      border:1px solid var(--line);
+      border-radius:28px;
+      box-shadow:0 20px 55px rgba(47,78,61,.08);
+      backdrop-filter:blur(12px);
+      transition:var(--transition);
+    }
+
+    .card:hover{
+      transform:translateY(-7px);
+      box-shadow:var(--shadow);
+      border-color:rgba(140,183,201,.35);
+    }
+
+    .blob{
+      position:absolute;
+      width:430px;
+      height:430px;
+      border-radius:999px;
+      background:rgba(140,183,201,.26);
+      filter:blur(95px);
+      pointer-events:none;
+    }
+
+    .blob.green{
+      background:rgba(85,122,103,.16);
+    }
+
+    .center{
+      text-align:center;
+      max-width:850px;
+      margin:0 auto 54px;
+    }
+
+    .center .title{
+      margin-top:20px;
+    }
+
+    .center .subtitle{
+      margin:20px auto 0;
+    }
+
+    header{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:20;
+      padding:24px 0;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .brand{
+      font-weight:900;
+      color:var(--green-dark);
+      letter-spacing:-.5px;
+      font-size:18px;
+    }
+
+    .brand span{
+      color:var(--green);
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:26px;
+      font-size:13px;
+      color:rgba(47,78,61,.68);
+      font-weight:800;
+    }
+
+    .nav-links a:hover{
+      color:var(--green);
+    }
+
+    .nav-cta{
+      background:var(--green-dark);
+      color:white;
+      padding:12px 18px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding:122px 0 72px;
+      background:
+        radial-gradient(circle at 82% 18%, rgba(140,183,201,.28), transparent 30%),
+        radial-gradient(circle at 16% 78%, rgba(85,122,103,.16), transparent 34%),
+        linear-gradient(180deg,#f7fbf7 0%, var(--cream) 100%);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:72px;
+      align-items:center;
+    }
+
+    .hero h1{
+      font-family:var(--serif);
+      font-size:68px;
+      line-height:.98;
+      letter-spacing:-2px;
+      color:var(--green-dark);
+      font-weight:800;
+      margin-top:22px;
+      max-width:760px;
+    }
+
+    .hero h1 span{
+      color:var(--green);
+    }
+
+    .hero p{
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.7;
+      margin-top:24px;
+      max-width:640px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:34px;
+    }
+
+    .hero-proof{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:34px;
+      max-width:670px;
+    }
+
+    .proof{
+      padding:18px;
+      background:rgba(255,255,255,.70);
+      border:1px solid var(--line);
+      border-radius:22px;
+    }
+
+    .proof strong{
+      color:var(--green-dark);
+      display:block;
+      font-weight:900;
+      margin-bottom:6px;
+    }
+
+    .proof span{
+      color:var(--muted);
+      font-size:12.5px;
+      line-height:1.4;
+      display:block;
+    }
+
+    .portrait-wrap{
+      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .portrait-card{
+      position:relative;
+      width:100%;
+      max-width:420px;
+      background:white;
+      border:10px solid white;
+      border-radius:220px 220px 32px 32px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      z-index:3;
+    }
+
+    .portrait-card img{
+      width:100%;
+      aspect-ratio:4/5;
+      object-fit:cover;
+      object-position:center top;
+    }
+
+    .floating-card{
+      position:absolute;
+      right:-20px;
+      bottom:34px;
+      z-index:5;
+      background:var(--green-dark);
+      color:white;
+      max-width:275px;
+      border-radius:28px;
+      padding:22px;
+      box-shadow:0 22px 60px rgba(47,78,61,.22);
+    }
+
+    .floating-card strong{
+      display:block;
+      font-family:var(--serif);
+      font-size:25px;
+      line-height:1.05;
+      margin-bottom:8px;
+      color:#dff5ea;
+    }
+
+    .floating-card span{
+      display:block;
+      color:rgba(255,255,255,.74);
+      font-size:13px;
+      line-height:1.5;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
+    .pain-card{
+      padding:34px;
+    }
+
+    .icon{
+      width:52px;
+      height:52px;
+      background:var(--blue-soft);
+      border-radius:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:25px;
+      margin-bottom:24px;
+    }
+
+    .pain-card h3{
+      font-family:var(--serif);
+      color:var(--green-dark);
+      font-size:26px;
+      line-height:1.12;
+      margin-bottom:14px;
+    }
+
+    .pain-card p{
+      color:var(--muted);
+      font-size:14.5px;
+      line-height:1.65;
+    }
+
+    .section-soft{
+      background:linear-gradient(180deg,var(--green-soft),#fffaf4);
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:74px;
+      align-items:center;
+    }
+
+    .image-box{
+      position:relative;
+      background:white;
+      border-radius:34px;
+      padding:18px;
+      box-shadow:var(--shadow);
+      border:1px solid var(--line);
+    }
+
+    .image-box::after{
+      content:"";
+      position:absolute;
+      inset:28px -24px -24px 28px;
+      border:1px solid rgba(140,183,201,.55);
+      border-radius:34px;
+      z-index:-1;
+    }
+
+    .image-box img{
+      width:100%;
+      border-radius:26px;
+      aspect-ratio:4/5;
+      object-fit:cover;
+      object-position:center top;
+    }
+
+    .copy .title{
+      margin-top:20px;
+    }
+
+    .copy .subtitle{
+      margin-top:20px;
+    }
+
+    .bullets{
+      display:grid;
+      gap:14px;
+      margin-top:28px;
+    }
+
+    .bullet{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.55;
+    }
+
+    .bullet b{
+      color:var(--green);
+      flex-shrink:0;
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+      margin-top:56px;
+    }
+
+    .step{
+      padding:28px;
+    }
+
+    .step strong{
+      font-family:var(--serif);
+      color:var(--green);
+      font-size:38px;
+      line-height:1;
+      display:block;
+      margin-bottom:18px;
+    }
+
+    .step h3{
+      color:var(--green-dark);
+      font-size:20px;
+      margin-bottom:10px;
+    }
+
+    .step p{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+    }
+
+    .objection{
+      background:var(--green-dark);
+      color:white;
+    }
+
+    .objection .title{
+      color:white;
+    }
+
+    .objection .title span{
+      color:#dff5ea;
+    }
+
+    .objection .subtitle{
+      color:rgba(255,255,255,.72);
+    }
+
+    .objection-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+      margin-top:34px;
+    }
+
+    .objection-card{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:26px;
+      padding:26px;
+    }
+
+    .objection-card h3{
+      font-size:20px;
+      margin-bottom:10px;
+      color:#dff5ea;
+    }
+
+    .objection-card p{
+      color:rgba(255,255,255,.68);
+      font-size:14.5px;
+      line-height:1.6;
+    }
+
+    .cta{
+      background:
+        radial-gradient(circle at 50% 0%, rgba(140,183,201,.30), transparent 35%),
+        linear-gradient(180deg,#f1f8f4 0%, #fffaf4 100%);
+    }
+
+    .cta-box{
+      max-width:920px;
+      margin:0 auto;
+      background:white;
+      border-radius:38px;
+      padding:50px 38px;
+      box-shadow:var(--shadow);
+      border:1px solid var(--line);
+      text-align:center;
+    }
+
+    .cta-box .title{
+      margin-top:20px;
+    }
+
+    .cta-box .subtitle{
+      margin:22px auto 0;
+    }
+
+    .cta-box .btn{
+      margin-top:34px;
+    }
+
+    .cta-note{
+      margin-top:16px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .faq{
+      max-width:860px;
+      margin:0 auto;
+    }
+
+    details{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:22px;
+      margin-bottom:14px;
+      overflow:hidden;
+    }
+
+    summary{
+      list-style:none;
+      cursor:pointer;
+      padding:22px 24px;
+      font-weight:900;
+      color:var(--green-dark);
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
+
+    summary::after{
+      content:"+";
+      color:var(--green);
+      font-size:24px;
+      line-height:1;
+    }
+
+    details[open] summary::after{
+      content:"−";
+    }
+
+    details p{
+      padding:0 24px 24px;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:14.5px;
+    }
+
+    footer{
+      background:#243c2f;
+      color:rgba(255,255,255,.62);
+      padding:50px 0 34px;
+      font-size:13px;
+    }
+
+    .footer-grid{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:30px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      padding-bottom:28px;
+      margin-bottom:24px;
+    }
+
+    .footer-brand{
+      color:white;
+      font-weight:900;
+      font-size:19px;
+      margin-bottom:8px;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:24px;
+      flex-wrap:wrap;
+    }
+
+    .footer-links a:hover{
+      color:white;
+    }
+
+    .footer-bottom{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      font-size:12px;
+      color:rgba(255,255,255,.48);
+    }
+
+    .credit{
+      text-transform:uppercase;
+      letter-spacing:1.5px;
+      font-weight:900;
+      color:rgba(255,255,255,.72);
+    }
+
+    @media(max-width:1024px){
+      .nav-links{
+        display:none;
+      }
+
+      .hero{
+        min-height:auto;
+        text-align:center;
+        padding-top:112px;
+      }
+
+      .hero-grid,
+      .split{
+        grid-template-columns:1fr;
+        gap:48px;
+      }
+
+      .hero p,
+      .hero h1,
+      .subtitle{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .hero-actions{
+        justify-content:center;
+      }
+
+      .hero-proof{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .portrait-wrap{
+        order:-1;
+      }
+
+      .portrait-card{
+        max-width:330px;
+      }
+
+      .floating-card{
+        position:relative;
+        right:auto;
+        bottom:auto;
+        margin:-34px auto 0;
+        text-align:center;
+      }
+
+      .cards,
+      .steps{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .title{
+        font-size:46px;
+      }
+
+      .hero h1{
+        font-size:54px;
+      }
+
+      .image-box{
+        max-width:420px;
+        margin:0 auto;
+      }
+
+      .image-box::after{
+        display:none;
+      }
+    }
+
+    @media(max-width:768px){
+      .container{
+        padding:0 20px;
+      }
+
+      section{
+        padding:68px 0;
+      }
+
+      header{
+        padding:18px 0;
+      }
+
+      .brand{
+        font-size:16px;
+      }
+
+      .nav-cta{
+        padding:10px 13px;
+        font-size:10px;
+      }
+
+      .hero{
+        padding-top:94px;
+        padding-bottom:58px;
+      }
+
+      .portrait-card{
+        max-width:280px;
+        border-width:7px;
+      }
+
+      .hero h1{
+        font-size:42px;
+        letter-spacing:-1.2px;
+      }
+
+      .title{
+        font-size:37px;
+        letter-spacing:-.8px;
+      }
+
+      .subtitle,
+      .hero p{
+        font-size:15.5px;
+      }
+
+      .btn{
+        width:100%;
+        padding:17px 18px;
+        font-size:11px;
+      }
+
+      .hero-proof,
+      .cards,
+      .steps,
+      .objection-grid{
+        grid-template-columns:1fr;
+      }
+
+      .cta-box{
+        padding:38px 22px;
+        border-radius:30px;
+      }
+
+      .footer-grid,
+      .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .footer-links{
+        justify-content:center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a href="#inicio" class="brand">Leiry Borges<span> Nutri</span></a>
+
+        <nav class="nav-links">
+          <a href="#para-quem">Para quem é</a>
+          <a href="#metodo">Método</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#duvidas">Dúvidas</a>
+        </nav>
+
+        <a href="https://nutri.leiryborges" class="nav-cta">Começar agora</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="blob" style="top:-120px;right:-120px;"></div>
+      <div class="blob green" style="bottom:-150px;left:-160px;"></div>
+
+      <div class="container">
+        <div class="hero-grid">
+
+          <div>
+            <span class="tag">Emagrecimento com rotina real</span>
+
+            <h1>
+              Emagreça com estratégia, mesmo com a <span>rotina corrida</span>.
+            </h1>
+
+            <p>
+              Acompanhamento nutricional personalizado para quem quer emagrecer sem dietas impossíveis, sem terrorismo alimentar e sem precisar viver uma rotina perfeita.
+            </p>
+
+            <div class="hero-actions">
+              <a href="https://nutri.leiryborges" class="btn">Quero começar agora</a>
+              <a href="#metodo" class="btn btn-secondary">Ver como funciona</a>
+            </div>
+
+            <div class="hero-proof">
+              <div class="proof">
+                <strong>Método personalizado</strong>
+                <span>estratégia adaptada à sua realidade</span>
+              </div>
+
+              <div class="proof">
+                <strong>Sem dietas impossíveis</strong>
+                <span>plano possível para manter constância</span>
+              </div>
+
+              <div class="proof">
+                <strong>Rotina corrida</strong>
+                <span>organização prática para o dia a dia</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="portrait-wrap">
+            <div class="portrait-card">
+              <img src="expert.jpg" alt="Nutricionista Leiry Borges">
+            </div>
+
+            <div class="floating-card">
+              <strong>Vida real, resultado real</strong>
+              <span>Nutrição com estratégia para quem precisa de praticidade e constância.</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PARA QUEM É -->
+    <section id="para-quem">
+      <div class="container">
+        <div class="center">
+          <span class="tag">Para quem é</span>
+          <h2 class="title">Para quem quer emagrecer sem depender de uma rotina <span>perfeita</span>.</h2>
+          <p class="subtitle">
+            Se você vive na correria, começa bem e depois desanda, o problema pode não ser falta de força de vontade. Pode ser falta de estratégia.
+          </p>
+        </div>
+
+        <div class="cards">
+          <div class="card pain-card">
+            <div class="icon">⏰</div>
+            <h3>Você tem pouco tempo</h3>
+            <p>
+              Para quem precisa de soluções práticas, escolhas simples e organização alimentar que caiba no dia a dia.
+            </p>
+          </div>
+
+          <div class="card pain-card">
+            <div class="icon">🥗</div>
+            <h3>Você cansou de dieta impossível</h3>
+            <p>
+              Para quem já tentou planos muito rígidos, difíceis de manter e desconectados da realidade.
+            </p>
+          </div>
+
+          <div class="card pain-card">
+            <div class="icon">🎯</div>
+            <h3>Você quer constância</h3>
+            <p>
+              Para quem quer emagrecer com direção, sem começar do zero toda segunda-feira.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OBJEÇÕES -->
+    <section class="objection">
+      <div class="container">
+        <div class="split">
+          <div class="copy">
+            <span class="tag">Quebra de objeções</span>
+            <h2 class="title">Você não precisa escolher entre sua rotina e o seu <span>resultado</span>.</h2>
+            <p class="subtitle">
+              O acompanhamento certo não ignora sua realidade. Ele usa sua rotina como ponto de partida para criar um plano possível.
+            </p>
+
+            <div class="objection-grid">
+              <div class="objection-card">
+                <h3>“Minha rotina é muito corrida.”</h3>
+                <p>A estratégia precisa se adaptar ao seu dia, não exigir uma vida perfeita.</p>
+              </div>
+
+              <div class="objection-card">
+                <h3>“Não consigo manter dieta.”</h3>
+                <p>Planos extremos falham. O foco é construir constância com escolhas reais.</p>
+              </div>
+
+              <div class="objection-card">
+                <h3>“Já tentei várias vezes.”</h3>
+                <p>Agora a proposta é ter método, acompanhamento e ajustes durante o processo.</p>
+              </div>
+
+              <div class="objection-card">
+                <h3>“Tenho medo de passar fome.”</h3>
+                <p>Emagrecer não precisa ser sinônimo de sofrimento ou restrição exagerada.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="image-box">
+            <img src="expert.jpg" alt="Leiry Borges Nutricionista">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÉTODO -->
+    <section class="section-soft" id="metodo">
+      <div class="container">
+        <div class="center">
+          <span class="tag">Como funciona</span>
+          <h2 class="title">Um método pessoal para emagrecer com mais leveza e direção.</h2>
+          <p class="subtitle">
+            O plano é construído considerando sua rotina, preferências, dificuldades e objetivo — sem fórmulas prontas.
+          </p>
+        </div>
+
+        <div class="steps">
+          <div class="card step">
+            <strong>01</strong>
+            <h3>Avaliação</h3>
+            <p>Entendimento da sua rotina, histórico, objetivo e principais dificuldades.</p>
+          </div>
+
+          <div class="card step">
+            <strong>02</strong>
+            <h3>Estratégia</h3>
+            <p>Criação de um plano alimentar possível, personalizado e claro.</p>
+          </div>
+
+          <div class="card step">
+            <strong>03</strong>
+            <h3>Aplicação</h3>
+            <p>Orientações práticas para comer melhor mesmo nos dias corridos.</p>
+          </div>
+
+          <div class="card step">
+            <strong>04</strong>
+            <h3>Ajustes</h3>
+            <p>Acompanhamento para corrigir rota, melhorar adesão e manter evolução.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+      <div class="container">
+        <div class="split">
+
+          <div class="image-box">
+            <img src="expert.jpg" alt="Leiry Borges Nutri">
+          </div>
+
+          <div class="copy">
+            <span class="tag">A nutricionista</span>
+            <h2 class="title">Leiry Borges</h2>
+            <p class="subtitle">
+              Nutricionista com foco em emagrecimento, método pessoal e estratégias que funcionam mesmo para quem tem rotina corrida.
+            </p>
+
+            <div class="bullets">
+              <div class="bullet"><b>✓</b> Emagrecimento com estratégia e personalização.</div>
+              <div class="bullet"><b>✓</b> Plano alimentar sem dietas impossíveis.</div>
+              <div class="bullet"><b>✓</b> Orientações práticas para a vida real.</div>
+              <div class="bullet"><b>✓</b> Foco em constância, autonomia e resultado sustentável.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="consulta">
+      <div class="container">
+        <div class="cta-box">
+          <span class="tag">Comece agora</span>
+
+          <h2 class="title">
+            Seu emagrecimento pode caber na sua rotina.
+          </h2>
+
+          <p class="subtitle">
+            Clique no botão abaixo e fale pelo link de atendimento para entender como começar seu acompanhamento nutricional.
+          </p>
+
+          <a href="https://nutri.leiryborges" class="btn">Quero começar agora</a>
+
+          <div class="cta-note">
+            Atendimento nutricional • Emagrecimento • Método pessoal • Sem dietas impossíveis
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="duvidas">
+      <div class="container">
+        <div class="center">
+          <span class="tag">Dúvidas frequentes</span>
+          <h2 class="title">Antes de começar</h2>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>O atendimento é personalizado?</summary>
+            <p>Sim. O plano considera sua rotina, preferências, dificuldades, histórico e objetivo.</p>
+          </details>
+
+          <details>
+            <summary>Preciso seguir uma dieta muito rígida?</summary>
+            <p>Não. A proposta é criar uma estratégia possível para manter constância, sem dietas impossíveis.</p>
+          </details>
+
+          <details>
+            <summary>Serve para quem tem rotina corrida?</summary>
+            <p>Sim. A comunicação da expert é justamente voltada para emagrecimento mesmo com rotina corrida.</p>
+          </details>
+
+          <details>
+            <summary>Como faço para começar?</summary>
+            <p>Clique no botão de atendimento e siga as orientações pelo link oficial da nutricionista.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Leiry Borges Nutri</div>
+          <p>Emagrecimento com estratégia, método pessoal e rotina real.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#inicio">Início</a>
+          <a href="#para-quem">Para quem é</a>
+          <a href="#metodo">Método</a>
+          <a href="#consulta">Começar</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Leiry Borges Nutri. Todos os direitos reservados.</p>
+        <p class="credit">Feito por DORYAN</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
